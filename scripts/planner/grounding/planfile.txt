@@ -1,0 +1,1 @@
+move;8.0,2.0aboverotate;8.0,2.0leftpick-up;8.0,2.0left
