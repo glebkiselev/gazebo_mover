@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 import json
 import os
@@ -7,11 +8,18 @@ from ros_connector.processer import Processer
 import pickle
 
 def search_plan(problem, saveload):
-#../spatial-benchmarks/task1/
-    domain = problem + 'spatial_domain.json'
-    start_sit = problem + 'start_sit.json'
-    finish_sit = problem + 'finish_sit.json'
-    print(os.listdir(path=problem))
+    dir = os.getcwd() + '/src/crumb_planner/scripts/planner/'
+    domain = dir+problem + 'spatial_domain.json'
+    start_sit = dir+problem + 'start_sit.json'
+    finish_sit = dir+problem + 'finish_sit.json'
+    #print(os.listdir('/src/crumb_planner/scripts/planner/'))
+    print(dir)
+
+    # domain = problem + 'spatial_domain.json'
+    # start_sit = problem + 'start_sit.json'
+    # finish_sit = problem + 'finish_sit.json'
+    #print(os.listdir('/src/crumb_planner/scripts/planner/'))
+
 
     with open(start_sit) as data_file1:
         start_map = json.load(data_file1)
@@ -38,7 +46,7 @@ if __name__ == "__main__":
     args = argparser.parse_args()
 
     solution = search_plan(args.problem, args.saveload)
-    print(solution)
+    #print(solution)
 
     pr = Processer(10, 10, 20)
     plan_to_file = []
@@ -51,7 +59,6 @@ if __name__ == "__main__":
         plan_to_file.append(act[0]+delim+str(new_coords[0])+','+str(new_coords[1])+act[2])
     with open('data.pickle', 'wb') as f:
         pickle.dump(plan_to_file, f)
-
-    #TODO все это писатьв  файл или в топик.
-
+#
+#
 

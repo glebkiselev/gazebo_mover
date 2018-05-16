@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/crumb_planner.iml" filepath="$PROJECT_DIR$/.idea/crumb_planner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../map-planner/.idea/map-planner.iml" filepath="$PROJECT_DIR$/../../../map-planner/.idea/map-planner.iml" />
     </modules>
   </component>
 </project>

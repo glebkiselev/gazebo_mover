@@ -1,4 +1,5 @@
 import itertools
+from copy import copy
 
 
 class CausalMatrix:
@@ -368,9 +369,9 @@ class Event:
     def get_signs_names(self):
         scm = set()
         for connector in self.coincidences:
-            scm.add(connector.out_sign)
-        names = {s.name for s in scm}
-        return names
+            scm.add(str(connector.out_sign.name))
+        #names = {s.name for s in scm}
+        return scm
 
 class Connector:
     """
@@ -476,7 +477,6 @@ class Sign:
 
     def add_meaning(self, pm=None):
         if not pm:
-            # создается каузальная матрица личностных смыслов
             pm = CausalMatrix(self, self._next_meaning)
         else:
             pm.index = self._next_meaning
@@ -508,7 +508,7 @@ class Sign:
                     connector.out_sign.remove_meaning(connector.get_out_cm('meaning'), deleted)
                     deleted.append((connector.out_sign, connector.out_index))
 
-        for connector in self.out_meanings.copy():
+        for connector in copy(self.out_meanings):
             if connector.out_index == cm.index:
                 self.out_meanings.remove(connector)
 

@@ -3,8 +3,8 @@ import itertools
 import re
 from copy import deepcopy, copy
 
-from grounding.semnet import Sign
-from grounding.sign_task import Task
+from ..semnet import Sign
+from ..sign_task import Task
 
 
 signs = {}
@@ -218,16 +218,16 @@ def compare(s_matrix, pm):
         elements = []
         if causas:
             for el in causas:
-                elements.extend([obj[0] for obj in get_attributes(s_matrix[el])])
+                elements.extend([obj[0] for obj in get_attributes(s_matrix[el], signs)])
         if effects:
             for el in effects:
-                elements.extend([obj[0] for obj in get_attributes(s_matrix[el])])
+                elements.extend([obj[0] for obj in get_attributes(s_matrix[el], signs)])
         if iner_signs == set(elements):
             return pm
     return None
 
 
-def get_attributes(iner):
+def get_attributes(iner, signs):
     matrices = []
     if isinstance(iner, list):
         for s_name in iner:
@@ -253,14 +253,14 @@ def get_attributes(iner):
                     if causas:
                         elements = []
                         for el in causas:
-                            elements.extend(get_attributes(s_matrix[el]))
+                            elements.extend(get_attributes(s_matrix[el], signs))
                         for elem in elements:
                             connector = el_signif.add_feature(elem[1])
                             elem[0].add_out_significance(connector)
                     if effects:
                         elements = []
                         for el in effects:
-                            elements.extend(get_attributes(s_matrix[el]))
+                            elements.extend(get_attributes(s_matrix[el], signs))
                         for elem in elements:
                             connector = el_signif.add_feature(elem[1], effect=True)
                             elem[0].add_out_significance(connector)
@@ -268,7 +268,7 @@ def get_attributes(iner):
 
         return matrices
 
-def get_reg_location(cell_location, near_loc, region):
+def get_reg_location(cell_location, near_loc, region, signs):
     closely = [reg for reg in near_loc['cell-4'] if not reg == 0]
     nearly = set()
     for cell, regions in near_loc.items():
@@ -285,7 +285,7 @@ def get_reg_location(cell_location, near_loc, region):
         return signs['nearly']
     return signs['faraway']
 
-def resonated(signif, regions_struct,region, contain_reg):
+def resonated(signif, regions_struct,region, contain_reg, signs):
     inner_matrices = signif.spread_down_activity('significance', 5)
     if not inner_matrices:
         return False
@@ -359,7 +359,7 @@ def state_prediction(agent, map, holding = None):
     return agent_state
 
 
-def define_map(map_name, region_map, cell_location, near_loc, regions_struct):
+def define_map(map_name, region_map, cell_location, near_loc, regions_struct, signs):
     map_sign = Sign(map_name)
     map_meaning = map_sign.add_meaning()
     elements = {}
@@ -424,11 +424,11 @@ def define_map(map_name, region_map, cell_location, near_loc, regions_struct):
             if not connectors:
                 connectors.append(connector)
 
-        loc_sign = get_reg_location(cell_location, near_loc, region)
+        loc_sign = get_reg_location(cell_location, near_loc, region, signs)
         connector = connectors[0]
         am = None
         for id, signif in loc_sign.significances.items():
-            if resonated(signif, regions_struct, region, contain_reg):
+            if resonated(signif, regions_struct, region, contain_reg, signs):
                 am = signif.copy('significance', 'meaning')
                 break
 
@@ -466,11 +466,11 @@ def define_map(map_name, region_map, cell_location, near_loc, regions_struct):
     return map_meaning
 
 
-def update_situation(sit_meaning, cell_map):
+def update_situation(sit_meaning, cell_map, signs):
     # add ontable by logic
     for cell, items in cell_map.items():
         if len(items) > 1:
-            attributes = get_attributes(list(items))
+            attributes = get_attributes(list(items), signs)
             roles = set()
             chains = {}
             for atr in attributes:
@@ -514,7 +514,7 @@ def update_situation(sit_meaning, cell_map):
     return sit_meaning
 
 
-def define_situation(sit_name, cell_map, events, agent_state):
+def define_situation(sit_name, cell_map, events, agent_state, signs):
     signs[sit_name] = Sign(sit_name)
     sit_meaning = signs[sit_name].add_meaning()
     contain_sign = signs['contain']
@@ -658,7 +658,7 @@ def define_situation(sit_name, cell_map, events, agent_state):
                     conn = sit_meaning.add_feature(mean)
                     mean.sign.add_out_meaning(conn)
 
-            sit_meaning= update_situation(sit_meaning, cell_map)
+            sit_meaning= update_situation(sit_meaning, cell_map, signs)
         else:
             conn = sit_meaning.add_feature(actuator)
             actuator.sign.add_out_meaning(conn)
@@ -733,7 +733,7 @@ def ground(start_map, finish_map, signs_structure, agent):
         if 'cause' and 'effect' in smaller:
             pred_signif = pred_sign.add_significance()
             for part, iner in smaller.items():
-                matrices = get_attributes(iner)
+                matrices = get_attributes(iner, signs)
                 for el in matrices:
                     if part == "cause":
                         connector = pred_signif.add_feature(el[1], effect=False, zero_out=True)
@@ -749,25 +749,25 @@ def ground(start_map, finish_map, signs_structure, agent):
                 effects = [el for el in iner if 'effect' in el]
                 for element in causas:
                     if not 'any' in iner[element]:
-                        matrices = get_attributes(iner[element])
+                        matrices = get_attributes(iner[element], signs)
                         for el in matrices:
                             connector = pred_signif.add_feature(el[1], effect=False, zero_out=True)
                             el[0].add_out_significance(connector)
                     else:
                         for key, el in iner[element].items():
-                            matrices.extend(get_attributes(el))
+                            matrices.extend(get_attributes(el, signs))
                         mixed.append(matrices)
                         matrices = []
 
                 for element in effects:
                     if not 'any' in iner[element]:
-                        matrices = get_attributes(iner[element])
+                        matrices = get_attributes(iner[element], signs)
                         for el in matrices:
                             connector = pred_signif.add_feature(el[1], effect=True, zero_out=True)
                             el[0].add_out_significance(connector)
                     else:
                         for key, el in iner[element].items():
-                            matrices.extend(get_attributes(el))
+                            matrices.extend(get_attributes(el, signs))
                         mixed.append(matrices)
                         matrices = []
                 if mixed:
@@ -830,14 +830,14 @@ def ground(start_map, finish_map, signs_structure, agent):
 
     region_map, cell_map, cell_location, near_loc, cell_coords = signs_markup(start_map, agent)
     regions_struct = get_struct()
-    map_pms = define_map('*map*', region_map, cell_location, near_loc, regions_struct)
+    map_pms = define_map('*map*', region_map, cell_location, near_loc, regions_struct, signs)
     #em = map_pms.spread_down_activity('meaning', 4)
     agent_state_start = state_prediction(I_sign, start_map)
-    start_situation = define_situation('*start*', cell_map, events, agent_state_start)
+    start_situation = define_situation('*start*', cell_map, events, agent_state_start, signs)
     region_map, cell_map, cell_location, near_loc, _ = signs_markup(finish_map, agent)
     agent_state_finish = state_prediction(I_sign, finish_map)
-    goal_situation = define_situation('*finish*', cell_map, events, agent_state_finish)
-    goal_map = define_map('*goal_map*', region_map, cell_location, near_loc, regions_struct)
+    goal_situation = define_situation('*finish*', cell_map, events, agent_state_finish, signs)
+    goal_map = define_map('*goal_map*', region_map, cell_location, near_loc, regions_struct, signs)
     #em = goal_situation.spread_down_activity('meaning', 6)
 
     coords = {}

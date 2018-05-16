@@ -1,16 +1,16 @@
 import logging
 
 import itertools
-from copy import deepcopy
+from copy import deepcopy, copy
 
-import grounding.sign_task as st
-from grounding.semnet import Sign
+import planner.grounding.sign_task as st
+from planner.grounding.semnet import Sign
 import random
-from grounding.spatial_cognition.map_signs import state_prediction
-from grounding.spatial_cognition.map_signs import define_situation
-from grounding.spatial_cognition.map_signs import signs_markup
-from grounding.spatial_cognition.map_signs import define_map
-from grounding.spatial_cognition.map_signs import update_situation
+from planner.grounding.spatial_cognition.map_signs import state_prediction
+from planner.grounding.spatial_cognition.map_signs import define_situation
+from planner.grounding.spatial_cognition.map_signs import signs_markup
+from planner.grounding.spatial_cognition.map_signs import define_map
+from planner.grounding.spatial_cognition.map_signs import update_situation
 
 MAX_ITERATION = 60
 
@@ -63,7 +63,7 @@ def _step_generating(active_pm, map_pms, script, agent, additions, iteration, pa
     additions[0][iteration+1] = cell_coords
     additions[1][iteration+1] = parsed_map
     if change_map(map_pms, cell_location):
-        map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2])
+        map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2], world_model)
         print('map has been changed!')
         #em = map_pms.spread_down_activity('meaning', 4)
 
@@ -124,7 +124,6 @@ def map_iteration(active_pm, check_pm, map_pms, check_map, current_plan, iterati
                 applicable_meanings.append((agent, checked))
 
     # TODO: replace to metarule apply
-    # TODO: ввести i в списке дополнений 0
     candidates = _meta_check_activity(applicable_meanings, active_pm, check_pm, [x for x, _, _, _, _ in current_plan], additions, iteration, prev_state, check_map)
 
     if not candidates:
@@ -140,7 +139,7 @@ def map_iteration(active_pm, check_pm, map_pms, check_map, current_plan, iterati
     for counter, name, script, ag_mask in candidates:
         #todo remember previous coords
         logging.debug('\tChoose {0}: {1} -> {2}'.format(counter, name, script))
-        plan = current_plan.copy()
+        plan = copy(current_plan)
         #plan.append((active_pm, name, script, ag_mask))
 
         next_pm, map_pms, prev_state, direction = _step_generating(active_pm, map_pms, script, agent, additions, iteration, True, prev_state)
@@ -184,7 +183,7 @@ def _get_experience(agents):
 
 def long_relations(plans):
     logging.info("in long relations")
-    # отбираем самые короткие планы
+    # min(len) plans
     min = len(plans[0])
     for plan in plans:
         if len(plan) < min:
@@ -197,7 +196,7 @@ def long_relations(plans):
         agents = {}
         counter = 0
         plan_agents = []
-        # нахождение длин подряд идущих действий у одного агента
+        #lens of following actions from 1 ag
         for action in plan:
             if action[3] not in agents:
                 agents[action[3]] = 1
@@ -214,7 +213,7 @@ def long_relations(plans):
                 counter += 1
                 if agents[action[3]] < counter:
                     agents[action[3]] = counter
-        # выбираем самую длинную последовательность действий в плане - она будет главной характеристикой плана
+        # max queue of acts
         longest = 0
         agent = ""
         for element in range(len(agents)):
@@ -228,26 +227,26 @@ def long_relations(plans):
     cheapest = []
     longest = 0
     min_agents = 100
-    # находим самую длинную последовательность действий
+    # max queue
     for plan in busiest:
         if plan[2] > longest:
             longest = plan[2]
-    # находим наименьшее число агентов в самых длинных планах
+    # min(len(ag))
     for plan in busiest:
         if plan[2] == longest:
             if len(plan[3]) < min_agents:
                 min_agents = len(plan[3])
-    # из 2 предыдущих выбираем тот, в котором фигурирую я - если таких нет говорим об этом
+    # if I in
     for plan in busiest:
         if plan[3][0]:
             if plan[2] == longest and len(plan[3]) == min_agents and "I" in plan[3]:
-                plans_copy = plans.copy()
+                plans_copy = copy(plans)
                 cheap.append(plans_copy.pop(plan[0]))
             elif plan[2] == longest and len(plan[3]) == min_agents and not "I" in plan[3]:
-                plans_copy = plans.copy()
+                plans_copy = copy(plans)
                 alternative.append(plans_copy.pop(plan[0]))
         else:
-            plans_copy = plans.copy()
+            plans_copy = copy(plans)
             cheap.append(plans_copy.pop(plan[0]))
     if len(cheap) >= 1:
         cheapest.extend(random.choice(cheap))
@@ -297,7 +296,7 @@ def mix_pairs(replace_map):
     for item in replace_map:
         elements.append(item[1])
     elements = list(itertools.product(*elements))
-    clean_el = elements.copy()
+    clean_el = copy(elements)
     for element in clean_el:
         if not len(set(element)) == len(element):
             elements.remove(element)
@@ -375,6 +374,9 @@ def _generate_meanings(chains, agents):
 
     new_map = {}
 
+    rkeys = {el for el in replace_map.keys()}
+
+
     pms = []
     for agent, lpm in unrenewed.items():
         # firstly full signed actions from experience
@@ -385,13 +387,13 @@ def _generate_meanings(chains, agents):
             pm_mean = pm.spread_down_activity('meaning', 3)
             for pm_list in pm_mean:
                 pm_signs |= set([c.sign for c in pm_list])
-            role_signs = replace_map.keys() & pm_signs
+            role_signs = rkeys & pm_signs
             if not role_signs:
                 lpm.remove(pm)
                 if not pms:
                     pms.append((agent, pm))
                 else:
-                    for _, pmd in pms.copy():
+                    for _, pmd in copy(pms):
                         if pmd.resonate('meaning', pm):
                             break
                     else:
@@ -411,7 +413,7 @@ def _generate_meanings(chains, agents):
                 old_pms.append(pm_signs)
             else:
                 continue
-            role_signs = replace_map.keys() & pm_signs
+            role_signs = rkeys & pm_signs
             for role_sign in role_signs:
                 new_map[role_sign] = replace_map[role_sign]
 
@@ -526,7 +528,7 @@ def _generate_meanings(chains, agents):
                 if not pms:
                     pms.append((agent, cm))
                 else:
-                    for _, pmd in pms.copy():
+                    for _, pmd in copy(pms):
                         if pmd.resonate('meaning', cm):
                             break
                     else:
@@ -632,8 +634,8 @@ def _state_prediction(active_pm, script, agent, additions, iteration, flag = Fal
         new_x_y['objects'][block_name]['x'] = new_x_y['objects']['agent']['x']
     region_map, cell_map, cell_location, near_loc, cell_coords_new = signs_markup(new_x_y, 'agent', cell_coords)
 
-    estimation = define_situation(fast_estimation.sign.name+'sp', cell_map, events, agent_state)
-    estimation = update_situation(estimation, cell_map)
+    estimation = define_situation(fast_estimation.sign.name+'sp', cell_map, events, agent_state, world_model)
+    estimation = update_situation(estimation, cell_map, world_model)
 
     if flag:
         region = None
@@ -746,8 +748,10 @@ def _meta_check_activity(scripts, active_pm, check_pm, prev_pms, additions, iter
                             counter += 2
 
             else:
-                for event in [event for event in estimation.cause if "I" not in event.get_signs_names()]:
-                    for ce in [event for event in check_pm.cause if "I" not in event.get_signs_names()]:
+                est_events = [event for event in estimation.cause if "I" not in event.get_signs_names()]
+                ce_events = [event for event in check_pm.cause if "I" not in event.get_signs_names()]
+                for event in est_events:
+                    for ce in ce_events:
                         if event.resonate('meaning', ce):
                             counter += 1
                             break
