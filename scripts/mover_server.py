@@ -4,8 +4,14 @@ from crumb_planner.srv import *
 import rospy
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg  import Point
+import std_srvs
+from std_srvs.srv import Empty
+
 from math import pow,atan2,sqrt
 
+
+
+prev_directions = []
 
 class TurtleBot:
 
@@ -20,6 +26,7 @@ class TurtleBot:
      # when a message of type Point is received.
      self.pose_subscriber = rospy.Subscriber('/simulation/pose',
                                              Point, self.update_pose)
+
 
      self.pose = Point()
      self.rate = rospy.Rate(10)
@@ -37,7 +44,7 @@ class TurtleBot:
                  pow((goal_pose.y - self.pose.y), 2))
 
 
- def move2goal(self, pose_x, pose_y):
+ def move(self, pose_x, pose_y):
      """Moves the turtle to the goal."""
      print(pose_x)
      print(pose_y)
@@ -79,30 +86,123 @@ class TurtleBot:
          vel_msg.linear.x = 0
          # Force the robot to stop
          self.velocity_publisher.publish(vel_msg)
-         # # IZMENIL TUT'
-         # rospy.spin()
+         return 'yes'
 
      # If we press control + C, the node will stop.
-     #rospy.spin()
+     rospy.spin()
+
+ def get_angle(self, direct, prev_direct):
+     circle = {}
+     circle['above'] = 0
+     circle["below"] = 180
+     circle["left"] = -90
+     circle["right"] = 90
+     circle["above-left"] = -45
+     circle["above-right"] = 45
+     circle["below-left"] = -135
+     circle["below-right"] = 135
+
+     prev_angle = circle[prev_direct]
+     dir_angle = circle[direct]
+     if prev_angle < 0 and dir_angle >0:
+         ch_ang = abs(prev_angle) + dir_angle
+     elif prev_angle <0 and dir_angle <0:
+        ch_ang = dir_angle - prev_angle
+     elif prev_angle >0 and dir_angle <0:
+         ch_ang = prev_angle - dir_angle
+     else:
+         ch_ang = dir_angle - prev_angle
+     return ch_ang
+
+
+ def rotate(self, direct, prev_direct):
+    "rotate to new direction"
+    print('rotating to {0}'.format(direct))
+    PI = 3.1415926535897
+
+    vel_msg = Twist()
+
+    # degrees/sec
+    speed = 15
+    # direction
+    angle = self.get_angle(direct, prev_direct)
+
+    if angle < 0:
+        clockwise = False
+    else:
+        clockwise = True
+
+    angle = abs(angle)
+
+    #Converting from angles to radians
+    angular_speed = speed*2*PI/360
+    relative_angle = angle*2*PI/360
+
+    #We wont use linear components
+    vel_msg.linear.x=0
+    vel_msg.linear.y=0
+    vel_msg.linear.z=0
+    vel_msg.angular.x = 0
+    vel_msg.angular.y = 0
+
+    # Checking if our movement is CW or CCW
+    if clockwise:
+        vel_msg.angular.z = -abs(angular_speed)
+    else:
+        vel_msg.angular.z = abs(angular_speed)
+    # Setting the current time for distance calculus
+    t0 = rospy.Time.now().to_sec()
+    current_angle = 0
+
+    while(current_angle < relative_angle):
+        self.velocity_publisher.publish(vel_msg)
+        t1 = rospy.Time.now().to_sec()
+        current_angle = angular_speed*(t1-t0)
+
+
+    #Forcing our robot to stop
+    vel_msg.angular.z = 0
+    self.velocity_publisher.publish(vel_msg)
+    return 'yes'
+    #rospy.spin()
+
+ def pickup(self, x):
+     print('pick-up call')
+     return 'yes'
 
 def handle_action(req):
     #print("Returning [%s + %s = %s]" % (req.a, req.b, (req.a + req.b)))
     if req.action:
         print("req on the server")
         print(req.action)
-    string_point = req.action.split(";")[1]
-    gp_x = int(string_point.strip().split(",")[0])
-    gp_y = int(string_point.strip().split(",")[1])
+
+    act_form = [a.strip() for a in req.action.split(";")]
+
     try:
         x = TurtleBot()
-        x.move2goal(gp_x, gp_y)
+        if act_form[0] == 'move':
+            string_point = act_form[1]
+            gp_x = int(string_point.split(",")[0])
+            gp_y = int(string_point.split(",")[1])
+            resp = x.move(gp_x, gp_y)
+        elif act_form[0] == 'rotate':
+            global prev_directions
+            if not prev_directions:
+                prev_direct = 'above'
+                prev_directions.append(prev_direct)
+            else:
+                prev_direct = prev_directions[-1]
+            resp = x.rotate(act_form[2], prev_direct)
+        elif act_form[0] == 'pick-up':
+            resp = x.pickup(act_form)
     except rospy.ROSInterruptException:
         pass
 
-    return SendOneStringResponse('yes')
+    return SendOneStringResponse(resp)
 
 def move_server():
     rospy.init_node('send_one_string_server')
+    rospy.ServiceProxy("/gazebo/unpause_physics", std_srvs.srv.Empty)
     s = rospy.Service('send_one_string', SendOneString, handle_action)
     print("Ready to move.")
     rospy.spin()

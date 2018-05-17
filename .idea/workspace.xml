@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16d21d2c-8a01-4d9a-b910-d51cf5199781" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/crumb_planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crumb_planner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/semnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/grounding/semnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/search/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/search/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task1/finish_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task1/spatial_domain.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task1/start_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task2/finish_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task2/spatial_domain.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task2/start_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task3/finish_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task3/spatial_domain.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task3/start_sit.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mover_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mover_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mover_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mover_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../map-planner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../map-planner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../map-planner/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../map-planner/README.md" afterDir="false" />
     </list>
@@ -32,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="mover_client.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mover_client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="180">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -45,61 +29,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spatial_planner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map_signs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="430" column="75" selection-start-line="430" selection-start-column="75" selection-end-line="430" selection-end-column="75" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="semnet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="512" selection-start-line="512" selection-end-line="512" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapsearch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mover_server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mover_server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+            <state relative-caret-position="615">
+              <caret line="79" column="52" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="52" />
               <folding>
                 <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spatial_domain.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rotater.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
+              <folding>
+                <element signature="e#22#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +88,8 @@
         <option value="$PROJECT_DIR$/scripts/planner/grounding/semnet.py" />
         <option value="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" />
         <option value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
-        <option value="$PROJECT_DIR$/scripts/mover_server.py" />
         <option value="$PROJECT_DIR$/scripts/mover_client.py" />
+        <option value="$PROJECT_DIR$/scripts/mover_server.py" />
       </list>
     </option>
   </component>
@@ -179,6 +136,14 @@
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="planner" type="462c0819:PsiDirectoryNode" />
               <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="task5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -318,13 +283,13 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959569" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32991803" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32991803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39959016" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39959016" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -398,13 +363,129 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/planner/test.py">
+    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="270">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="86" column="51" lean-forward="true" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1602">
+          <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7740">
+          <caret line="430" column="75" selection-start-line="430" selection-start-column="75" selection-end-line="430" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9216">
+          <caret line="512" selection-start-line="512" selection-end-line="512" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1962">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/test.py" />
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/finish_sit.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-249" />
@@ -419,9 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="75" column="45" lean-forward="true" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-          <folding>
-            <element signature="e#23#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -439,35 +517,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="64" lean-forward="true" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/search/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/ros_connector/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1247971764/posix.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -502,31 +557,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="7740">
           <caret line="430" column="75" selection-start-line="430" selection-start-column="75" selection-end-line="430" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="9216">
           <caret line="512" selection-start-line="512" selection-end-line="512" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="1962">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,28 +580,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-          <folding>
-            <element signature="e#23#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="e#22#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="79" column="52" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="52" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
           </folding>
         </state>
       </provider>

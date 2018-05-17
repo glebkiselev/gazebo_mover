@@ -13,7 +13,7 @@ def send_one_string_client(string_message):
         send_one_string = rospy.ServiceProxy('send_one_string', SendOneString)
         resp1 = send_one_string(string_message)
         if resp1.reply:
-            print("YEST REPLY")
+            print("YES REPLY")
         return resp1.reply
     except rospy.ServiceException as e:
         print("Service call failed: %s" % e)
