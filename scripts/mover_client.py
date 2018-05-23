@@ -14,6 +14,7 @@ def send_one_string_client(string_message):
         resp1 = send_one_string(string_message)
         if resp1.reply:
             print("YES REPLY")
+        time.sleep(1)
         return resp1.reply
     except rospy.ServiceException as e:
         print("Service call failed: %s" % e)
