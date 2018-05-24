@@ -12,7 +12,6 @@ from math import pow, atan2, sqrt, acos, atan, radians
 from tf import transformations as trans
 import numpy as np
 
-
 prev_directions = []
 
 
@@ -33,11 +32,9 @@ class TurtleBot:
         self.pose = Point()
         self.rate = rospy.Rate(10)
 
-
         # odom subscriber
         self.__odom_sub = rospy.Subscriber('/odom', Odometry, self.__odom_handler)
         self.__angle = float()
-
 
     def update_pose(self, data):
         """Callback function which is called when a new message of type Pose is
@@ -74,7 +71,6 @@ class TurtleBot:
         else:
             clockwise = True
 
-
         vel_msg = Twist()
 
         vel_msg.linear.x = 1
@@ -93,7 +89,7 @@ class TurtleBot:
             evcl = self.euclidean_distance(goal_pose)
             # Loop to move the turtle in an specified distance
             while (current_distance < evcl):
-                #print('i am in {0},{1}'.format(self.pose.x, self.pose.y))
+                # print('i am in {0},{1}'.format(self.pose.x, self.pose.y))
                 # Publish the velocity
                 self.velocity_publisher.publish(vel_msg)
                 # Takes actual time to velocity calculus
@@ -105,21 +101,20 @@ class TurtleBot:
             # Force the robot to stop
             self.velocity_publisher.publish(vel_msg)
             print('robot stoped')
-            #Rotate to previous direction
+            # Rotate to previous direction
             PI = 3.1415926535897
             speed = 7.0
             angular_speed = speed * 2 * PI / 360
-            resp2 = self.rudder(angle, angular_speed, clockwise)
+            resp2 = self.rudder(angle*2, angular_speed, clockwise)
             if resp2 == 'yes':
                 return 'yes'
 
         # If we press control + C, the node will stop.
         rospy.spin()
 
-
     def rotate_to_goal(self, goal_pose, direction):
         print('rotating to goal!')
-        #hypotenuse = self.euclidean_distance(goal_pose)
+        # hypotenuse = self.euclidean_distance(goal_pose)
 
         if goal_pose.x > self.pose.x and goal_pose.y > self.pose.y:
             if goal_pose.x > goal_pose.y:
@@ -150,7 +145,6 @@ class TurtleBot:
                 new_dir = 'right'
                 clockwise = True
 
-
         if abs(goal_pose.x) - abs(self.pose.x) > abs(goal_pose.y) - abs(self.pose.y):
             nearest = abs(abs(self.pose.x) - abs(goal_pose.x))
             other = abs(abs(self.pose.y) - abs(goal_pose.y))
@@ -161,8 +155,7 @@ class TurtleBot:
         print('len of nearest is {0}'.format(nearest))
         print('len of other is {0}'.format(other))
 
-
-        angle = atan(other/nearest)
+        angle = atan(other / nearest) / 2
 
         if new_dir != direction:
             print('new dir is {0}'.format(new_dir))
@@ -170,17 +163,16 @@ class TurtleBot:
         else:
             resp = 'yes'
 
-        #PI = 3.1415926535897
+        # PI = 3.1415926535897
         speed = 2.0
 
         if resp:
             angular_speed = radians(speed)
 
-            resp2  = self.rudder(angle, angular_speed, clockwise)
+            resp2 = self.rudder(angle, angular_speed, clockwise)
 
             if resp2:
                 return resp2, angle, clockwise
-
 
     def get_angle(self, direct, prev_direct):
         circle = {}
@@ -213,10 +205,9 @@ class TurtleBot:
 
         self.__angle = a
 
-
     def rudder(self, relative_angle, angular_speed=0.1, clockwise=True):
 
-        #print('rotating to {0}, clockwise {1}, speed {2}'.format(relative_angle, clockwise, angular_speed))
+        # print('rotating to {0}, clockwise {1}, speed {2}'.format(relative_angle, clockwise, angular_speed))
 
         vel_msg = Twist()
         # We wont use linear components
@@ -233,9 +224,8 @@ class TurtleBot:
             vel_msg.angular.z = abs(angular_speed)
         # Setting the current time for distance calculus
         t0 = rospy.Time.now().to_sec()
-        #t0 = self.time
+        # t0 = self.time
         current_angle = 0
-
 
         print('cur start ang is {0}'.format(current_angle))
         print('odom angle start %s' % self.__angle)
@@ -248,7 +238,6 @@ class TurtleBot:
         print('wish angle is {0}'.format(relative_angle))
         print('cur finish angle is {0}, time is {1}'.format(current_angle, rospy.Time.now().to_sec()))
         print('odom angle finish %s' % self.__angle)
-
 
         # Forcing our robot to stop
         vel_msg.angular.z = 0
@@ -289,7 +278,7 @@ class TurtleBot:
 def handle_action(req):
     # print("Returning [%s + %s = %s]" % (req.a, req.b, (req.a + req.b)))
     if req.action:
-        #print("req on the server")
+        # print("req on the server")
         print(req.action)
 
     act_form = [a.strip() for a in req.action.split(";")]
