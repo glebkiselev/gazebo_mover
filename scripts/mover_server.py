@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import json
+import os
 
 from crumb_planner.srv import *
 import rospy
@@ -13,6 +15,7 @@ from tf import transformations as trans
 import numpy as np
 
 prev_directions = []
+plan = []
 
 
 class TurtleBot:
@@ -116,33 +119,33 @@ class TurtleBot:
         print('rotating to goal!')
         # hypotenuse = self.euclidean_distance(goal_pose)
 
-        if goal_pose.x > self.pose.x and goal_pose.y > self.pose.y:
+        if goal_pose.x >= self.pose.x and goal_pose.y >= self.pose.y:
             if goal_pose.x > goal_pose.y:
-                new_dir = 'above'
-                clockwise = False
-            else:
-                new_dir = 'left'
-                clockwise = True
-        elif goal_pose.x < self.pose.x and goal_pose.y > self.pose.y:
-            if abs(goal_pose.x) > abs(goal_pose.y):
-                new_dir = 'below'
-                clockwise = True
-            else:
-                new_dir = 'left'
-                clockwise = False
-        elif goal_pose.x > self.pose.x and goal_pose.y < self.pose.y:
-            if abs(goal_pose.x) > abs(goal_pose.y):
-                new_dir = 'above'
-                clockwise = True
-            else:
                 new_dir = 'right'
+                clockwise = False
+            else:
+                new_dir = 'above'
+                clockwise = False
+        elif goal_pose.x <= self.pose.x and goal_pose.y >= self.pose.y:
+            if abs(goal_pose.x) > abs(goal_pose.y):
+                new_dir = 'left'
+                clockwise = True
+            else:
+                new_dir = 'above'
+                clockwise = False
+        elif goal_pose.x >= self.pose.x and goal_pose.y <= self.pose.y:
+            if abs(goal_pose.x) > abs(goal_pose.y):
+                new_dir = 'right'
+                clockwise = True
+            else:
+                new_dir = 'below'
                 clockwise = False
         else:
             if abs(goal_pose.x) > abs(goal_pose.y):
-                new_dir = 'below'
+                new_dir = 'left'
                 clockwise = False
             else:
-                new_dir = 'right'
+                new_dir = 'below'
                 clockwise = True
 
         if abs(goal_pose.x) - abs(self.pose.x) > abs(goal_pose.y) - abs(self.pose.y):
@@ -288,9 +291,18 @@ def handle_action(req):
     try:
         x = TurtleBot()
         global prev_directions
-        if not prev_directions:
-            prev_direct = 'above'
+        global plan
+        if not plan:
+            plan.append(act_form)
+        if not prev_directions and plan[-1][0] != 'move':
+            path = os.getcwd() + '/src/crumb_planner/scripts/planner/start_sit.json'
+            with open(path) as data_file1:
+                start_map = json.load(data_file1)
+            prev_direct = start_map["agent-orientation"]
             prev_directions.append(prev_direct)
+        elif len(plan) == 1 and plan[-1][0] == 'move':
+            prev_directions.append(plan[-1][2])
+            prev_direct = prev_directions[-1]
         else:
             prev_direct = prev_directions[-1]
         if act_form[0] == 'move':
