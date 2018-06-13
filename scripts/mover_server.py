@@ -13,6 +13,9 @@ import time
 from math import pow, atan2, sqrt, acos, atan, radians
 from tf import transformations as trans
 import numpy as np
+from roslib import message
+import sensor_msgs.point_cloud2 as pc2
+from sensor_msgs.msg import PointCloud2, PointField
 
 prev_directions = []
 plan = []
@@ -39,6 +42,29 @@ class TurtleBot:
         self.__odom_sub = rospy.Subscriber('/odom', Odometry, self.__odom_handler)
         self.__angle = float()
 
+        # camera handler
+        self.cam_sub = rospy.Subscriber("/camera/depth/points", PointCloud2, self.callback_kinect)
+        self.middle = PointCloud2()
+
+    def callback_kinect(self, data):
+        # pick a height
+        height = int(data.height / 2)
+        # pick x coords near front and center
+        middle_x = int(data.width / 2)
+        # examine point
+        self.read_depth(middle_x, height, data)
+        # do stuff with middle
+
+    def read_depth(self, width, height, data):
+        # read function
+        if (height >= data.height) or (width >= data.width):
+            return -1
+        data_out = pc2.read_points(data, field_names=None, skip_nans=False, uvs=[[width, height]])
+        int_data = next(data_out)
+        #rospy.loginfo("int_data " + str(int_data))
+        self.middle = int_data
+        return int_data
+
     def update_pose(self, data):
         """Callback function which is called when a new message of type Pose is
      received by the subscriber."""
@@ -51,9 +77,13 @@ class TurtleBot:
         return sqrt(pow((goal_pose.x - self.pose.x), 2) +
                     pow((goal_pose.y - self.pose.y), 2))
 
-    def move(self, pose_x, pose_y, direction):
+    def euclidean_cur_distance(self, goal_pose, cur_pose_x, cur_pose_y):
+        return sqrt(pow((goal_pose.x - cur_pose_x), 2) +
+                    pow((goal_pose.y - cur_pose_y), 2))
+
+    def move(self, pose_x, pose_y, direction, cur_pose_x = None, cur_pose_y = None):
         """Moves the turtle to the goal."""
-        print('poses are {0},{1}'.format(pose_x, pose_y))
+        #print('poses are {0},{1}'.format(pose_x, pose_y))
 
         goal_pose = Point()
 
@@ -67,8 +97,8 @@ class TurtleBot:
             time.sleep(1)
 
         # get previous angle to goal moving
-        angle = resp[1]
-        clockwise = resp[2]
+        angle = resp[0]
+        clockwise = resp[1]
         if clockwise == True:
             clockwise = False
         else:
@@ -89,7 +119,10 @@ class TurtleBot:
             # Setting the current time for distance calculus
             t0 = rospy.Time.now().to_sec()
             current_distance = 0
-            evcl = self.euclidean_distance(goal_pose)
+            if not cur_pose_x:
+                evcl = self.euclidean_distance(goal_pose)
+            else:
+                evcl = self.euclidean_cur_distance(goal_pose, cur_pose_x, cur_pose_y)
             # Loop to move the turtle in an specified distance
             while (current_distance < evcl):
                 # print('i am in {0},{1}'.format(self.pose.x, self.pose.y))
@@ -104,13 +137,14 @@ class TurtleBot:
             # Force the robot to stop
             self.velocity_publisher.publish(vel_msg)
             print('robot stoped')
-            # Rotate to previous direction
-            PI = 3.1415926535897
-            speed = 7.0
-            angular_speed = speed * 2 * PI / 360
-            resp2 = self.rudder(angle*2, angular_speed, clockwise)
-            if resp2 == 'yes':
-                return 'yes'
+            # # Rotate to previous direction
+            # PI = 3.1415926535897
+            # speed = 17.0
+            # angular_speed = speed * 2 * PI / 360
+            # resp2 = self.rudder(angle*2, angular_speed, clockwise)
+            # if resp2 == 'yes':
+            #     return 'yes'
+            return 'yes'
 
         # If we press control + C, the node will stop.
         rospy.spin()
@@ -155,27 +189,32 @@ class TurtleBot:
             nearest = abs(abs(self.pose.y) - abs(goal_pose.y))
             other = abs(abs(self.pose.x) - abs(goal_pose.x))
 
-        print('len of nearest is {0}'.format(nearest))
-        print('len of other is {0}'.format(other))
+        # print('len of nearest is {0}'.format(nearest))
+        # print('len of other is {0}'.format(other))
 
-        angle = atan(other / nearest) / 2
+        angle = atan(other / nearest)
+        change_dir = False
 
         if new_dir != direction:
             print('new dir is {0}'.format(new_dir))
             resp = self.rotate(new_dir, direction)
+            change_dir = True
         else:
+            print('dir is the same')
             resp = 'yes'
 
         # PI = 3.1415926535897
-        speed = 2.0
+        speed = 15.0
 
-        if resp:
+        if resp and change_dir:
             angular_speed = radians(speed)
 
             resp2 = self.rudder(angle, angular_speed, clockwise)
 
             if resp2:
                 return resp2, angle, clockwise
+        elif resp:
+            return 'yes', angle, clockwise
 
     def get_angle(self, direct, prev_direct):
         circle = {}
@@ -208,9 +247,9 @@ class TurtleBot:
 
         self.__angle = a
 
-    def rudder(self, relative_angle, angular_speed=0.1, clockwise=True):
+    def rudder(self, relative_angle, angular_speed=0.5, clockwise=True):
 
-        # print('rotating to {0}, clockwise {1}, speed {2}'.format(relative_angle, clockwise, angular_speed))
+        #print('rotating to {0}, clockwise {1}, speed {2}'.format(relative_angle, clockwise, angular_speed))
 
         vel_msg = Twist()
         # We wont use linear components
@@ -230,17 +269,17 @@ class TurtleBot:
         # t0 = self.time
         current_angle = 0
 
-        print('cur start ang is {0}'.format(current_angle))
-        print('odom angle start %s' % self.__angle)
+        # print('cur start ang is {0}'.format(current_angle))
+        # print('odom angle start %s' % self.__angle)
 
         while (current_angle < relative_angle):
             self.velocity_publisher.publish(vel_msg)
             t1 = rospy.Time.now().to_sec()
             current_angle = angular_speed * (t1 - t0)
-
-        print('wish angle is {0}'.format(relative_angle))
-        print('cur finish angle is {0}, time is {1}'.format(current_angle, rospy.Time.now().to_sec()))
-        print('odom angle finish %s' % self.__angle)
+        #
+        # print('wish angle is {0}'.format(relative_angle))
+        # print('cur finish angle is {0}, time is {1}'.format(current_angle, rospy.Time.now().to_sec()))
+        # print('odom angle finish %s' % self.__angle)
 
         # Forcing our robot to stop
         vel_msg.angular.z = 0
@@ -253,7 +292,7 @@ class TurtleBot:
         PI = 3.1415926535897
 
         # degrees/sec
-        speed = 5.0
+        speed = 15.0
         # direction
         print('new dir: {0}, prev dir: {1}'.format(direct, prev_direct))
         angle = self.get_angle(direct, prev_direct)
@@ -263,7 +302,7 @@ class TurtleBot:
         else:
             clockwise = True
 
-        angle = abs(angle)
+        angle = abs(angle) + 13.8
 
         # Converting from angles to radians
         angular_speed = speed * 2 * PI / 360
@@ -273,8 +312,17 @@ class TurtleBot:
 
         # rospy.spin()
 
-    def pickup(self, x):
-        print('pick-up call')
+    def pickup(self, act_form, prev_direct):
+        string_point = act_form[1]
+        cp_x = int(string_point.split(",")[0])
+        #TODO change gp_x to real cell value
+        cp_y = int(string_point.split(",")[1])
+        modified = cp_y+ cp_x
+        resp = self.move(cp_x, modified, prev_direct, cp_x, cp_y)
+        if resp:
+            print(self.middle)
+            #print('x is {0}, y is {1} and z is {2}'.format(self.middle[0], self.middle[1], self.middle[2]))
+
         return 'yes'
 
 
@@ -292,8 +340,7 @@ def handle_action(req):
         x = TurtleBot()
         global prev_directions
         global plan
-        if not plan:
-            plan.append(act_form)
+        plan.append(act_form)
         if not prev_directions and plan[-1][0] != 'move':
             path = os.getcwd() + '/src/crumb_planner/scripts/planner/start_sit.json'
             with open(path) as data_file1:
@@ -311,10 +358,12 @@ def handle_action(req):
             gp_y = int(string_point.split(",")[1])
             resp = x.move(gp_x, gp_y, prev_direct)
         elif act_form[0] == 'rotate':
-
+            prev_direct = prev_directions[-1]
+            prev_directions.append(act_form[2])
             resp = x.rotate(act_form[2], prev_direct)
         elif act_form[0] == 'pick-up':
-            resp = x.pickup(act_form)
+            prev_direct = prev_directions[-1]
+            resp = x.pickup(act_form, prev_direct)
     except rospy.ROSInterruptException:
         pass
 

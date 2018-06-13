@@ -45,7 +45,7 @@ if __name__ == "__main__":
     for act in solution:
         new_coords = pr.to_gazebo(*act[1])
         plan_to_file.append(act[0] + delim + str(new_coords[0]) + ',' + str(new_coords[1]) + delim+ act[2])
-    while i != len(plan_to_file)-1:
+    while i != len(plan_to_file):
         print(plan_to_file[i])
         reply = send_one_string_client(plan_to_file[i])
         while pr_time < maxtime:
