@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16d21d2c-8a01-4d9a-b910-d51cf5199781" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/crumb_planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crumb_planner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/data.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/data.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" afterDir="false" />
-    </list>
+    <list default="true" id="16d21d2c-8a01-4d9a-b910-d51cf5199781" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +84,8 @@
       <file leaf-file-name="mapsearch.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="169" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="197">
+              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -998,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="197">
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
