@@ -844,8 +844,10 @@ def ground(start_map, finish_map, signs_structure, agent):
     coords[0] = cell_coords
     maps = {}
     maps[0] = start_map
+    cells = {}
+    cells[0] = cell_map
     additions = []
-    additions.extend([coords, maps, regions_struct])
+    additions.extend([coords, maps, regions_struct, cells])
 
 
     return Task('spatial_problem_1', signs, None, start_situation.sign, goal_situation.sign, goal_map.sign, map_pms, additions)

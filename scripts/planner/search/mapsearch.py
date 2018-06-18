@@ -66,6 +66,12 @@ def _step_generating(active_pm, map_pms, script, agent, additions, iteration, pa
         map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2], world_model)
         print('map has been changed!')
         #em = map_pms.spread_down_activity('meaning', 4)
+    #TODO compare vs additions[3] - cell_map
+    elif iteration > 0:
+        if list(additions[3][iteration].values()) != list(additions[3][iteration-1].values()):
+            map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2],
+                                 world_model)
+            print('block was moved!')
 
     return next_pm, map_pms, prev_state, direction
 
@@ -127,7 +133,7 @@ def map_iteration(active_pm, check_pm, map_pms, check_map, current_plan, iterati
     candidates = _meta_check_activity(applicable_meanings, active_pm, check_pm, [x for x, _, _, _, _ in current_plan], additions, iteration, prev_state, check_map)
 
     if not candidates:
-        logging.debug('\tNot found applicable scripts ({0})'.format([x for _, x, _, _ in current_plan]))
+        logging.debug('\tNot found applicable scripts ({0})'.format([x for _, x, _, _,_ in current_plan]))
         return None
 
     logging.debug('\tFound {0} variants'.format(len(candidates)))
@@ -628,10 +634,23 @@ def _state_prediction(active_pm, script, agent, additions, iteration, flag = Fal
     new_x_y = deepcopy(additions[1][iteration])
     new_x_y['objects']['agent']['x'] = (cell_coords[2] - cell_coords[0]) // 2 + cell_coords[0]
     new_x_y['objects']['agent']['y'] = (cell_coords[3] - cell_coords[1]) // 2 + cell_coords[1]
+    #for pick-up script
     if holding:
         block_name = [sign.name for sign in holding.get_signs() if 'block' in sign.name][0]
-        new_x_y['objects'][block_name]['y'] = new_x_y['objects']['agent']['y']
-        new_x_y['objects'][block_name]['x'] = new_x_y['objects']['agent']['x']
+        if block_name in new_x_y['objects'].keys():
+            new_x_y['objects'][block_name]['y'] = new_x_y['objects']['agent']['y']
+            new_x_y['objects'][block_name]['x'] = new_x_y['objects']['agent']['x']
+        else:
+            block = {}
+            block[block_name] = {'x':new_x_y['objects']['agent']['x'], 'y': new_x_y['objects']['agent']['y'], 'r': 5}
+            new_x_y['objects'].update(block)
+            #print()
+    #for put-down script
+    if script.sign.name == 'put-down':
+        block_name = [sign.name for sign in script.get_iner(world_model['holding'], 'meaning')[0].get_signs() if 'block' in sign.name][0]
+        table_name = [sign.name for sign in script.get_iner(world_model['ontable'], 'meaning')[0].get_signs() if sign.name!=block_name][0]
+        new_x_y['objects'][block_name]['y'] = new_x_y['objects'][table_name]['y']
+        new_x_y['objects'][block_name]['x'] = new_x_y['objects'][table_name]['x']
     region_map, cell_map, cell_location, near_loc, cell_coords_new = signs_markup(new_x_y, 'agent', cell_coords)
 
     estimation = define_situation(fast_estimation.sign.name+'sp', cell_map, events, agent_state, world_model)
@@ -642,6 +661,7 @@ def _state_prediction(active_pm, script, agent, additions, iteration, flag = Fal
         for reg, cellz in cell_location.items():
             if 'cell-4' in cellz:
                 region = reg
+        additions[3][iteration] = cell_map
         print("act: {0}, cell: {1}, dir: {2}, reg: {3}".format(script.sign.name, cell_coords_new['cell-4'], direction.name, region))
         return estimation, cell_coords_new, new_x_y, cell_location, near_loc, region_map, direction.name
 

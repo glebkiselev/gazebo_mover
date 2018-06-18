@@ -1,10 +1,10 @@
 {
     "agent-actuator": {
-        "holding": {
-            "cause": [
-                "I",
-                "block-a"
-            ],
+        "agent": [
+            "I"
+        ],
+        "handempty": {
+            "cause": [],
             "effect": []
         }
     },
@@ -53,9 +53,14 @@
             "x": 99.0,
             "y": 33.0
         },
-        "table-1": {
+        "block-a": {
+            "r": 5,
+            "x": 165.0,
+            "y": 33.0
+        },
+        "table-0": {
             "r": 20,
-            "x": 140.0,
+            "x": 165.0,
             "y": 33.0
         }
     }

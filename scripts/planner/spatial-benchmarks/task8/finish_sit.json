@@ -1,14 +1,14 @@
 {
     "agent-actuator": {
-        "holding": {
-            "cause": [
-                "I",
-                "block-a"
-            ],
+        "agent": [
+            "I"
+        ],
+        "handempty": {
+            "cause": [],
             "effect": []
         }
     },
-    "agent-orientation": "right",
+    "agent-orientation": "left",
     "borders": {
         "border-1": {
             "x1": -20,
@@ -51,7 +51,17 @@
         "agent": {
             "r": 10,
             "x": 99.0,
-            "y": 33.0
+            "y": 166.0
+        },
+        "table-0":{
+            "r": 20,
+            "x": 33.0,
+            "y": 166.0
+        },
+        "block-a": {
+            "r": 5,
+            "x": 33.0,
+            "y": 166.0
         },
         "table-1": {
             "r": 20,
