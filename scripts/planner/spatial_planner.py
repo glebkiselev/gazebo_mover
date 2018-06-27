@@ -8,16 +8,16 @@ from ros_connector.processer import Processer
 import pickle
 
 def search_plan(problem, saveload):
-    # direct = os.getcwd() + '/src/crumb_planner/scripts/planner/'
-    # domain = direct+problem + 'spatial_domain.json'
-    # start_sit = direct+problem + 'start_sit.json'
-    # finish_sit = direct+problem + 'finish_sit.json'
-    # #print(os.listdir('/src/crumb_planner/scripts/planner/'))
-    # print(direct)
+    direct = os.getcwd() + '/src/crumb_planner/scripts/planner/'
+    domain = direct+problem + 'spatial_domain.json'
+    start_sit = direct+problem + 'start_sit.json'
+    finish_sit = direct+problem + 'finish_sit.json'
+    #print(os.listdir('/src/crumb_planner/scripts/planner/'))
+    print(direct)
 
-    domain = problem + 'spatial_domain.json'
-    start_sit = problem + 'start_sit.json'
-    finish_sit = problem + 'finish_sit.json'
+    # domain = problem + 'spatial_domain.json'
+    # start_sit = problem + 'start_sit.json'
+    # finish_sit = problem + 'finish_sit.json'
 
 
 

@@ -17,6 +17,10 @@ from roslib import message
 import sensor_msgs.point_cloud2 as pc2
 from sensor_msgs.msg import PointCloud2, PointField
 
+from planner.agent.agent_TRPO import TRPOAgent
+import gym
+import gym_crumb
+
 prev_directions = []
 plan = []
 
@@ -319,6 +323,20 @@ class TurtleBot:
         cp_y = int(string_point.split(",")[1])
         modified = cp_y+ cp_x
         resp = self.move(cp_x, modified, prev_direct, cp_x, cp_y)
+
+        if resp:
+            print(self.middle)
+            #print('x is {0}, y is {1} and z is {2}'.format(self.middle[0], self.middle[1], self.middle[2]))
+
+        return 'yes'
+
+    def putdown(self, act_form, prev_direct):
+        string_point = act_form[1]
+        cp_x = int(string_point.split(",")[0])
+        #TODO change gp_x to real cell value
+        cp_y = int(string_point.split(",")[1])
+        modified = cp_y+ cp_x
+        resp = self.move(cp_x, modified, prev_direct, cp_x, cp_y)
         if resp:
             print(self.middle)
             #print('x is {0}, y is {1} and z is {2}'.format(self.middle[0], self.middle[1], self.middle[2]))
@@ -342,7 +360,7 @@ def handle_action(req):
         global plan
         plan.append(act_form)
         if not prev_directions and plan[-1][0] != 'move':
-            path = os.getcwd() + '/src/crumb_planner/scripts/planner/start_sit.json'
+            path = os.getcwd() + '/src/crumb_planner/scripts/planner/spatial-benchmarks/task6/start_sit.json'
             with open(path) as data_file1:
                 start_map = json.load(data_file1)
             prev_direct = start_map["agent-orientation"]
@@ -352,6 +370,20 @@ def handle_action(req):
             prev_direct = prev_directions[-1]
         else:
             prev_direct = prev_directions[-1]
+
+
+
+        new_env = gym.make("crumb-synthetic-v0") 
+        new_agent = TRPOAgent(new_env)
+        new_agent.learn(reward=-200,  max_pathlength=500, n_timesteps=5000)
+        env1 = gym.make("crumb-pick-v0")
+        new_agent.grasp(env1)
+        new_agent.pick(env1)
+        new_agent.putdown(env1)
+
+
+
+
         if act_form[0] == 'move':
             string_point = act_form[1]
             gp_x = int(string_point.split(",")[0])
@@ -364,6 +396,9 @@ def handle_action(req):
         elif act_form[0] == 'pick-up':
             prev_direct = prev_directions[-1]
             resp = x.pickup(act_form, prev_direct)
+        elif act_form[0] == 'put-down':
+            prev_direct = prev_directions[-1]
+            resp = x.putdown(act_form, prev_direct)
     except rospy.ROSInterruptException:
         pass
 

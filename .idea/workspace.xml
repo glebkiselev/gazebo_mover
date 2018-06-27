@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16d21d2c-8a01-4d9a-b910-d51cf5199781" name="Default" comment="" />
+    <list default="true" id="16d21d2c-8a01-4d9a-b910-d51cf5199781" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/crumb_planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crumb_planner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mover_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mover_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/data.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/data.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/.idea/TRPOagent.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ros-rl/TRPOagent/run.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,50 +25,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mover_client.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/network/network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spatial_planner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="-15">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding>
-                <element signature="e#22#37#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_signs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+      <file leaf-file-name="agent_TRPO.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/agent/agent_TRPO.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="849" column="57" selection-start-line="849" selection-start-column="57" selection-end-line="849" selection-end-column="57" />
+            <state relative-caret-position="1674">
+              <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="finish_sit.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/finish_sit.json">
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-195">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start_sit.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/start_sit.json">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+            <state relative-caret-position="252">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crumb_env.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_env.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -62,50 +84,13 @@
       <file leaf-file-name="mover_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
+            <state relative-caret-position="615">
+              <caret line="394" column="53" lean-forward="true" selection-start-line="394" selection-start-column="53" selection-end-line="394" selection-end-column="53" />
               <folding>
                 <element signature="e#22#33#0" expanded="true" />
-                <marker date="1528362543282" expanded="true" signature="10718:10987" ph="..." />
+                <marker date="1530105672483" expanded="true" signature="10794:11063" ph="..." />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="processer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/ros_connector/processer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapsearch.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="semnet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spatial_domain.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/spatial_domain.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11577" />
           </provider>
         </entry>
       </file>
@@ -152,14 +137,25 @@
         <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/start_sit.json" />
         <option value="$PROJECT_DIR$/scripts/planner/ros_connector/processer.py" />
         <option value="$PROJECT_DIR$/scripts/mover_client.py" />
-        <option value="$PROJECT_DIR$/scripts/mover_server.py" />
-        <option value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
         <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" />
         <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/spatial_domain.json" />
         <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/start_sit.json" />
         <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/finish_sit.json" />
         <option value="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" />
         <option value="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" />
+        <option value="$PROJECT_DIR$/../../../truck_m/map-planner/src/mapplanner.py" />
+        <option value="$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py" />
+        <option value="$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/semnet.py" />
+        <option value="$PROJECT_DIR$/../../../truck_m/map-planner/src/connection/manager.py" />
+        <option value="$PROJECT_DIR$/../../../truck_m/map-planner/README.md" />
+        <option value="$PROJECT_DIR$/../../../ros-rl/TRPOagent/run.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/run.py" />
+        <option value="$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_env.py" />
+        <option value="$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_synthetic_env.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/network/network.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/agent/agent_TRPO.py" />
+        <option value="$PROJECT_DIR$/scripts/mover_server.py" />
       </list>
     </option>
   </component>
@@ -199,60 +195,14 @@
               <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="grounding" type="462c0819:PsiDirectoryNode" />
+              <item name="agent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
               <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="ros_connector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="task5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="task6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="task7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crumb_planner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crumb_planner" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="planner" type="462c0819:PsiDirectoryNode" />
-              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
-              <item name="task8" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,20 +211,22 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../map-planner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../gym-crumb/Gym-crumb" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/planner" />
+      <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7" />
+      <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6" />
+      <recent name="$PROJECT_DIR$/scripts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task8" />
       <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5" />
       <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/scripts/planner" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7" />
-      <recent name="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6" />
-      <recent name="$PROJECT_DIR$/scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -290,24 +242,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.spatial_planner">
-    <configuration name="mover_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="crumb_planner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python2.7" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/mover_client.py" />
-      <option name="PARAMETERS" value="planner/spatial-benchmarks/task5/" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="processer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crumb_planner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -326,6 +260,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="crumb_planner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/planner" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/planner/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="spatial_planner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="crumb_planner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -339,7 +291,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
-      <option name="PARAMETERS" value="spatial-benchmarks/task7/" />
+      <option name="PARAMETERS" value="spatial-benchmarks/task6/" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -357,24 +309,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/task_generator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="tester_plan" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="crumb_planner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/tester_plan.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -463,18 +397,16 @@
     </configuration>
     <list>
       <item itemvalue="Python.spatial_planner" />
-      <item itemvalue="Python.mover_client" />
-      <item itemvalue="Python.tester_plan" />
       <item itemvalue="Python.task_generator" />
       <item itemvalue="Python.processer" />
+      <item itemvalue="Python.run (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.spatial_planner" />
+        <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.processer" />
         <item itemvalue="Python.task_generator" />
-        <item itemvalue="Python.tester_plan" />
-        <item itemvalue="Python.mover_client" />
       </list>
     </recent_temporary>
   </component>
@@ -493,6 +425,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13638814" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -555,16 +488,44 @@
           <line>70</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>280</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>421</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>403</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>428</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py</url>
+          <line>418</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="91" />
+      <option name="time" value="113" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="connector.get_out_cm(base)" language="Python" />
-        <watch expression="conn.get_out_cm(base)" language="Python" />
-        <watch expression="list(additions[3][iteration].values()) == list(additions[3][iteration-1].values())" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -638,118 +599,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="86" column="51" lean-forward="true" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-            <marker date="1528362543282" expanded="true" signature="10718:10987" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task5/spatial_domain.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../crumb_mover/src/rotater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-            <marker date="1528362543282" expanded="true" signature="10718:10987" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7740">
-          <caret line="430" column="75" selection-start-line="430" selection-start-column="75" selection-end-line="430" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9216">
-          <caret line="512" selection-start-line="512" selection-end-line="512" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1962">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-            <marker date="1528362543282" expanded="true" signature="10718:10987" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/test.py" />
-    <entry file="file://$PROJECT_DIR$/scripts/send_one_string_client.py" />
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -872,24 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
-          <folding>
-            <element signature="e#22#33#0" expanded="true" />
-            <marker date="1528362543282" expanded="true" signature="10718:10987" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task8/start_sit.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -911,9 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/pick_place.world">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/start_sit.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -930,7 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/finish_sit.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
+        <state relative-caret-position="180">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
         </state>
       </provider>
@@ -942,11 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/spatial_domain.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11577" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../map-planner/src/grounding/semnet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -956,7 +779,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="2304">
           <caret line="129" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
@@ -965,35 +788,195 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-198">
           <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15174">
+          <caret line="849" column="57" selection-start-line="849" selection-start-column="57" selection-end-line="849" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2736">
+          <caret line="164" column="139" lean-forward="true" selection-start-line="164" selection-start-column="139" selection-end-line="164" selection-end-column="139" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="849" column="57" selection-start-line="849" selection-start-column="57" selection-end-line="849" selection-end-column="57" />
+        <state relative-caret-position="342">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/src/mapplanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/semnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="133" column="28" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/agent_grounding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/src/connection/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="40" column="59" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../truck_m/map-planner/src/grounding/sign_grounding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6969">
+          <caret line="719" selection-start-line="719" selection-end-line="719" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/agent/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../ros-rl/TRPOagent/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../ros-rl/TRPOagent/agent/agent_TRPO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="136" column="56" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="486">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
             <element signature="e#22#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
+    <entry file="file://$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_pick_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
+        <state relative-caret-position="54">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_synthetic_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="119" column="57" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/network/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/gym/envs/registration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="118" column="11" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../gym-crumb/Gym-crumb/gym_crumb/envs/crumb_env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="394" column="53" lean-forward="true" selection-start-line="394" selection-start-column="53" selection-end-line="394" selection-end-column="53" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+            <marker date="1530105672483" expanded="true" signature="10794:11063" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/agent/agent_TRPO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
