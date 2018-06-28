@@ -1,10 +1,10 @@
 (lp0
-Vrotate;0,0above
+Vmove;6,0right
 p1
-aVmove;0,6above
+aVrotate;6,0above
 p2
-aVrotate;0,6right
+aVput-down;6,0above
 p3
-aVpick-up;0,6right
+aVpick-up;6,0above
 p4
 a.

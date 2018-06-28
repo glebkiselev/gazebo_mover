@@ -466,51 +466,73 @@ def define_map(map_name, region_map, cell_location, near_loc, regions_struct, si
     return map_meaning
 
 
-def update_situation(sit_meaning, cell_map, signs):
+def update_situation(sit_meaning, cell_map, signs, fast_est=None):
     # add ontable by logic
-    for cell, items in cell_map.items():
-        if len(items) > 1:
-            attributes = get_attributes(list(items), signs)
-            roles = set()
-            chains = {}
-            for atr in attributes:
-                roles |= set(atr[0].find_attribute())
-                chains.setdefault(atr[0], set()).update(atr[0].spread_up_activity_obj('significance', 2))
-            if len(roles) == len(attributes):
-                predicates = {}
-                for role in roles:
-                    predicates[role] = role.get_predicates()
-                com_preds = set()
-                for key1, item1 in predicates.items():
-                    com_preds |= {s.name for s in item1}
-                    for key2, item2 in predicates.items():
-                        if key1 != key2:
-                            for com in copy(com_preds):
-                                if not com in {s.name for s in item2}:
-                                    com_preds.remove(com)
+    if not fast_est:
+        for cell, items in cell_map.items():
+            if len(items) > 1:
+                attributes = get_attributes(list(items), signs)
+                roles = set()
+                chains = {}
+                for atr in attributes:
+                    roles |= set(atr[0].find_attribute())
+                    chains.setdefault(atr[0], set()).update(atr[0].spread_up_activity_obj('significance', 2))
+                if len(roles) == len(attributes) or len(attributes) > 2:
+                    predicates = {}
+                    for role in roles:
+                        predicates[role] = role.get_predicates()
+                    com_preds = set()
+                    for key1, item1 in predicates.items():
+                        com_preds |= {s.name for s in item1}
+                        for key2, item2 in predicates.items():
+                            if key1 != key2:
+                                for com in copy(com_preds):
+                                    if not com in {s.name for s in item2}:
+                                        com_preds.remove(com)
 
-                upper_roles = set()
-                for _, chain in chains.items():
-                    upper_roles |= {ch.sign for ch in chain}
-                signifs = set()
-                for pred in com_preds:
-                    for _, sig in getattr(signs[pred], "significances").items():
-                        if len(sig.cause) == len(roles):
-                            if sig.get_signs() <= upper_roles:
-                                signifs.add(sig)
-                if signifs:
-                    signif = signifs.pop()
-                    signif_signs = signif.get_signs()
-                    replace = []
-                    for sign in signif_signs:
-                        for key, chain in chains.items():
-                            if sign in [s.sign for s in chain]:
-                                replace.append((sign, key.add_meaning()))
-                    mean = signif.copy('significance', 'meaning')
-                    for pair in replace:
-                        mean.replace('meaning', pair[0], pair[1])
-                    connector = sit_meaning.add_feature(mean)
-                    mean.sign.add_out_meaning(connector)
+                    upper_roles = set()
+                    for _, chain in chains.items():
+                        upper_roles |= {ch.sign for ch in chain}
+                    signifs = set()
+                    for pred in com_preds:
+                        for _, sig in getattr(signs[pred], "significances").items():
+                            if len(sig.cause) == len(roles):
+                                if sig.get_signs() <= upper_roles:
+                                    signifs.add(sig)
+                    if signifs:
+                        signif = signifs.pop()
+                        signif_signs = signif.get_signs()
+                        replace = []
+                        for sign in signif_signs:
+                            for key, chain in chains.items():
+                                if sign in [s.sign for s in chain]:
+                                    replace.append((sign, key.add_meaning()))
+                        merge_roles = []
+                        for el1 in replace:
+                            for el2 in replace:
+                                if el1 != el2 and el1[0]!=el2[0]:
+                                    if el1[0] in signif_signs and el2[0] in signif_signs:
+                                        if not (el1, el2) in merge_roles and not (el2, el1) in merge_roles:
+                                            merge_roles.append((el1, el2))
+                        matrices = []
+                        for elem in merge_roles:
+                            mean = signif.copy('significance', 'meaning')
+                            for pair in elem:
+                                mean.replace('meaning', pair[0], pair[1])
+                            matrices.append(mean)
+                        for matrixe in matrices:
+                            connector = sit_meaning.add_feature(matrixe)
+                            matrixe.sign.add_out_meaning(connector)
+    else:
+        target_signs = ['holding', 'handempty', 'ontable']
+        for event in fast_est.cause:
+            if len(event.coincidences) == 1:
+                    for fevent in sit_meaning.cause:
+                        if event.resonate('meaning', fevent):
+                            break
+                    else:
+                        if [con.get_out_cm('meaning').sign.name for con in event.coincidences][0] in target_signs:
+                            sit_meaning.add_event(event, False)
     return sit_meaning
 
 

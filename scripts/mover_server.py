@@ -360,6 +360,7 @@ def handle_action(req):
         global plan
         plan.append(act_form)
         if not prev_directions and plan[-1][0] != 'move':
+            #TODO get task in client side and send it to server
             path = os.getcwd() + '/src/crumb_planner/scripts/planner/spatial-benchmarks/task6/start_sit.json'
             with open(path) as data_file1:
                 start_map = json.load(data_file1)
@@ -380,9 +381,6 @@ def handle_action(req):
         new_agent.grasp(env1)
         new_agent.pick(env1)
         new_agent.putdown(env1)
-
-
-
 
         if act_form[0] == 'move':
             string_point = act_form[1]

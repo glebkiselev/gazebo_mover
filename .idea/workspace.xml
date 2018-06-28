@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7178cee7-289b-469c-8ef4-e5c169c222d0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/finish_sit.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/pick_place.world" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/spatial_domain.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/start_sit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mover_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mover_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/data.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/data.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/medicine/Knowledge.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/medicine/Knowledge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/medicine/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/medicine/dot_grounding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/planner/spatial_planner.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="mover_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="379" column="40" lean-forward="true" selection-start-line="379" selection-start-column="40" selection-end-line="379" selection-end-column="40" />
+              <folding>
+                <element signature="e#22#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="finish_sit.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/finish_sit.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start_sit.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/start_sit.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pick_place.world" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/pick_place.world">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1479" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spatial_domain.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/spatial_domain.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1724">
+              <caret line="666" lean-forward="true" selection-start-line="666" selection-end-line="666" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mapsearch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map_signs.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="528" selection-start-line="528" selection-end-line="528" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spatial_planner.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#22#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="semnet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-969">
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
+        <option value="$PROJECT_DIR$/scripts/mover_server.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/finish_sit.json" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/start_sit.json" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/spatial_domain.json" />
+        <option value="$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/spatial_domain.json" />
+        <option value="$PROJECT_DIR$/scripts/planner/search/mapsearch.py" />
+        <option value="$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="261" />
+    <option name="y" value="33" />
+    <option name="width" value="1401" />
+    <option name="height" value="1002" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="grounding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="task6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="task7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="task8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="planner" type="462c0819:PsiDirectoryNode" />
+              <item name="spatial-benchmarks" type="462c0819:PsiDirectoryNode" />
+              <item name="task9" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gazebo_mover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gazebo_mover" type="462c0819:PsiDirectoryNode" />
+              <item name="srv" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gleb\PycharmProjects\gazebo_mover\scripts\planner\spatial-benchmarks\task9" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="spatial_planner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="gazebo_mover" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/planner" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/planner/spatial_planner.py" />
+      <option name="PARAMETERS" value="spatial-benchmarks/task9/" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.spatial_planner" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7178cee7-289b-469c-8ef4-e5c169c222d0" name="Default" comment="" />
+      <created>1530182971569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530182971569</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1721" height="1041" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24956064" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="len(current_plan)==3" language="Python" />
+          <url>file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="len(plan) == 2" language="Python" />
+          <url>file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py</url>
+          <line>777</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="49" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="[el.get_out_cm('meaning') for el in event.coincidences]" language="Python" />
+        <watch expression="world_model['above'] in watch_matrix(event, 'meaning')[0].get_signs()" language="Python" />
+        <watch expression="[el.get_out_cm('meaning') for el in fevent.coincidences]" language="Python" />
+        <watch expression="__py_debug_temp_var_1892698094" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>len(plan) == 2</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>world_model['above'] in watch_matrix(event, 'meaning')[0].get_signs()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cm.sign.name == &quot;pick-up&quot;</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cm.sign.name = &quot;pick-up&quot;</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(current_plan)==3</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(current_plan)==2</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cm.sign.name=='pick-up'</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(current_plan) == 2</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="watch">
+      <expression>
+        <expression-string>world_model['above'] in watch_matrix(event, 'meaning')[0].get_signs()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>world_model['above-left'] in watch_matrix(event, 'meaning')[0].get_signs()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[el.get_out_cm('meaning') for el in fevent.coincidences]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[el.get_out_cm('meaning') for el in event.coincidences]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[el.get_ot_cm('meaning') for el in event.coincidences]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>[elem.get_out_cm('meanings') for elem in event.coincidences]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>event.get_out_cm('meanings')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/planfile.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-248">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task8/finish_sit.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/pick_place.world">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task6/finish_sit.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/start_sit.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/sign_grounding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mover_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="379" column="40" lean-forward="true" selection-start-line="379" selection-start-column="40" selection-end-line="379" selection-end-column="40" />
+          <folding>
+            <element signature="e#22#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task7/spatial_domain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="593" column="39" lean-forward="true" selection-start-line="593" selection-start-column="39" selection-end-line="593" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/spatial_domain.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1724">
+          <caret line="666" lean-forward="true" selection-start-line="666" selection-end-line="666" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/semnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial_planner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#22#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/spatial-benchmarks/task9/finish_sit.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/search/mapsearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/planner/grounding/spatial_cognition/map_signs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="528" selection-start-line="528" selection-end-line="528" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

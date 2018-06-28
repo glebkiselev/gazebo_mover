@@ -3,14 +3,14 @@ import logging
 import itertools
 from copy import deepcopy, copy
 
-import planner.grounding.sign_task as st
-from planner.grounding.semnet import Sign
+import grounding.sign_task as st
+from grounding.semnet import Sign
 import random
-from planner.grounding.spatial_cognition.map_signs import state_prediction
-from planner.grounding.spatial_cognition.map_signs import define_situation
-from planner.grounding.spatial_cognition.map_signs import signs_markup
-from planner.grounding.spatial_cognition.map_signs import define_map
-from planner.grounding.spatial_cognition.map_signs import update_situation
+from grounding.spatial_cognition.map_signs import state_prediction
+from grounding.spatial_cognition.map_signs import define_situation
+from grounding.spatial_cognition.map_signs import signs_markup
+from grounding.spatial_cognition.map_signs import define_map
+from grounding.spatial_cognition.map_signs import update_situation
 
 MAX_ITERATION = 60
 
@@ -65,8 +65,6 @@ def _step_generating(active_pm, map_pms, script, agent, additions, iteration, pa
     if change_map(map_pms, cell_location):
         map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2], world_model)
         print('map has been changed!')
-        #em = map_pms.spread_down_activity('meaning', 4)
-    #TODO compare vs additions[3] - cell_map
     elif iteration > 0:
         if list(additions[3][iteration].values()) != list(additions[3][iteration-1].values()):
             map_pms = define_map(st.MAP_PREFIX + str(st.SIT_COUNTER), region_map, cell_location, near_loc, additions[2],
@@ -143,7 +141,6 @@ def map_iteration(active_pm, check_pm, map_pms, check_map, current_plan, iterati
     print("len of curent plan is: {0}. Len of candidates: {1}".format(len(current_plan), len(candidates)))
 
     for counter, name, script, ag_mask in candidates:
-        #todo remember previous coords
         logging.debug('\tChoose {0}: {1} -> {2}'.format(counter, name, script))
         plan = copy(current_plan)
         #plan.append((active_pm, name, script, ag_mask))
@@ -654,7 +651,7 @@ def _state_prediction(active_pm, script, agent, additions, iteration, flag = Fal
     region_map, cell_map, cell_location, near_loc, cell_coords_new = signs_markup(new_x_y, 'agent', cell_coords)
 
     estimation = define_situation(fast_estimation.sign.name+'sp', cell_map, events, agent_state, world_model)
-    estimation = update_situation(estimation, cell_map, world_model)
+    estimation = update_situation(estimation, cell_map, world_model, fast_estimation)
 
     if flag:
         region = None
